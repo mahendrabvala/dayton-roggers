@@ -1,0 +1,9 @@
+C:\Users\virus-attack\Downloads\DR Project Details\Old Code of All Tools\Office365 Tools\Tool 1\Dayton_RogersTool\bin\Debug\Dayton_RogersTool.exe.config
+C:\Users\virus-attack\Downloads\DR Project Details\Old Code of All Tools\Office365 Tools\Tool 1\Dayton_RogersTool\obj\Debug\Dayton_RogersTool.exe
+C:\Users\virus-attack\Downloads\DR Project Details\Old Code of All Tools\Office365 Tools\Tool 1\Dayton_RogersTool\obj\Debug\Dayton_RogersTool.pdb
+C:\Users\virus-attack\Downloads\DR Project Details\Old Code of All Tools\Office365 Tools\Tool 1\Dayton_RogersTool\bin\Debug\Dayton_RogersTool.exe
+C:\Users\virus-attack\Downloads\DR Project Details\Old Code of All Tools\Office365 Tools\Tool 1\Dayton_RogersTool\bin\Debug\Dayton_RogersTool.pdb
+C:\Users\virus-attack\Downloads\DR Project Details\Old Code of All Tools\Office365 Tools\Tool 1\Dayton_RogersTool\bin\Debug\Microsoft.SharePoint.Client.dll
+C:\Users\virus-attack\Downloads\DR Project Details\Old Code of All Tools\Office365 Tools\Tool 1\Dayton_RogersTool\bin\Debug\Microsoft.SharePoint.Client.Runtime.dll
+C:\Users\virus-attack\Downloads\DR Project Details\Old Code of All Tools\Office365 Tools\Tool 1\Dayton_RogersTool\obj\Debug\Dayton_RogersTool.csprojResolveAssemblyReference.cache
+C:\Users\virus-attack\Downloads\DR Project Details\Old Code of All Tools\Office365 Tools\Tool 1\Dayton_RogersTool\bin\Debug\log4net.dll

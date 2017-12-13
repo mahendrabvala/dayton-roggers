@@ -1,0 +1,16 @@
+D:\ALL Projects Requirement\Dayton Rogers_Invoice Cover Sheet\Released tools\Tool 2\GKL.ApprovalEmails\bin\Release\GKL.ApprovalEmails.exe.config
+D:\ALL Projects Requirement\Dayton Rogers_Invoice Cover Sheet\Released tools\Tool 2\GKL.ApprovalEmails\bin\Release\GKL.ApprovalEmails.exe
+D:\ALL Projects Requirement\Dayton Rogers_Invoice Cover Sheet\Released tools\Tool 2\GKL.ApprovalEmails\bin\Release\GKL.ApprovalEmails.pdb
+D:\ALL Projects Requirement\Dayton Rogers_Invoice Cover Sheet\Released tools\Tool 2\GKL.ApprovalEmails\bin\Release\Microsoft.SharePoint.Client.dll
+D:\ALL Projects Requirement\Dayton Rogers_Invoice Cover Sheet\Released tools\Tool 2\GKL.ApprovalEmails\bin\Release\Microsoft.SharePoint.Client.Runtime.dll
+D:\ALL Projects Requirement\Dayton Rogers_Invoice Cover Sheet\Released tools\Tool 2\GKL.ApprovalEmails\obj\Release\GKL.ApprovalEmails.exe
+D:\ALL Projects Requirement\Dayton Rogers_Invoice Cover Sheet\Released tools\Tool 2\GKL.ApprovalEmails\obj\Release\GKL.ApprovalEmails.pdb
+D:\GScan Backup_31032017\All Files\ALL Projects Requirement\Dayton Rogers_Invoice Cover Sheet\Released tools\Tool 2\GKL.ApprovalEmails\bin\Release\GKL.ApprovalEmails.exe.config
+D:\GScan Backup_31032017\All Files\ALL Projects Requirement\Dayton Rogers_Invoice Cover Sheet\Released tools\Tool 2\GKL.ApprovalEmails\obj\Release\GKL.ApprovalEmails.exe
+D:\GScan Backup_31032017\All Files\ALL Projects Requirement\Dayton Rogers_Invoice Cover Sheet\Released tools\Tool 2\GKL.ApprovalEmails\obj\Release\GKL.ApprovalEmails.pdb
+D:\GScan Backup_31032017\All Files\ALL Projects Requirement\Dayton Rogers_Invoice Cover Sheet\Office365 Tools\Tool 2\GKL.ApprovalEmails\bin\Release\GKL.ApprovalEmails.exe.config
+D:\GScan Backup_31032017\All Files\ALL Projects Requirement\Dayton Rogers_Invoice Cover Sheet\Office365 Tools\Tool 2\GKL.ApprovalEmails\obj\Release\GKL.ApprovalEmails.exe
+D:\GScan Backup_31032017\All Files\ALL Projects Requirement\Dayton Rogers_Invoice Cover Sheet\Office365 Tools\Tool 2\GKL.ApprovalEmails\obj\Release\GKL.ApprovalEmails.pdb
+D:\GScan Backup_31032017\All Files\ALL Projects Requirement\Dayton Rogers_Invoice Cover Sheet\Office365 Tools\Tool 2\GKL.ApprovalEmails\bin\Release\GKL.ApprovalEmails.exe
+D:\GScan Backup_31032017\All Files\ALL Projects Requirement\Dayton Rogers_Invoice Cover Sheet\Office365 Tools\Tool 2\GKL.ApprovalEmails\bin\Release\GKL.ApprovalEmails.pdb
+D:\GScan Backup_31032017\All Files\ALL Projects Requirement\Dayton Rogers_Invoice Cover Sheet\Office365 Tools\Tool 2\GKL.ApprovalEmails\obj\Release\GKL.ApprovalEmails.csprojResolveAssemblyReference.cache

@@ -1,0 +1,46 @@
+C:\Users\Purna\Documents\Visual Studio 2015\Projects\GKL.ApprovalEmails\GKL.ApprovalEmails\bin\Debug\GKL.ApprovalEmails.exe.config
+C:\Users\Purna\Documents\Visual Studio 2015\Projects\GKL.ApprovalEmails\GKL.ApprovalEmails\bin\Debug\GKL.ApprovalEmails.exe
+C:\Users\Purna\Documents\Visual Studio 2015\Projects\GKL.ApprovalEmails\GKL.ApprovalEmails\bin\Debug\GKL.ApprovalEmails.pdb
+C:\Users\Purna\Documents\Visual Studio 2015\Projects\GKL.ApprovalEmails\GKL.ApprovalEmails\bin\Debug\Microsoft.SharePoint.Client.dll
+C:\Users\Purna\Documents\Visual Studio 2015\Projects\GKL.ApprovalEmails\GKL.ApprovalEmails\bin\Debug\Microsoft.SharePoint.Client.Runtime.dll
+C:\Users\Purna\Documents\Visual Studio 2015\Projects\GKL.ApprovalEmails\GKL.ApprovalEmails\obj\Debug\GKL.ApprovalEmails.exe
+C:\Users\Purna\Documents\Visual Studio 2015\Projects\GKL.ApprovalEmails\GKL.ApprovalEmails\obj\Debug\GKL.ApprovalEmails.pdb
+C:\Users\Purna\Documents\Visual Studio 2015\Projects\GKL.ApprovalEmails\GKL.ApprovalEmails\obj\Debug\GKL.ApprovalEmails.csprojResolveAssemblyReference.cache
+C:\Users\malli\Google Drive\01 GRADIENT-Customers\October-2016-Dayton Rogers\Released\New Demo Tool_Dayton Rogers_V1_09012016\GKL.ApprovalEmails\GKL.ApprovalEmails\bin\Debug\GKL.ApprovalEmails.exe.config
+C:\Users\malli\Google Drive\01 GRADIENT-Customers\October-2016-Dayton Rogers\Released\New Demo Tool_Dayton Rogers_V1_09012016\GKL.ApprovalEmails\GKL.ApprovalEmails\obj\Debug\GKL.ApprovalEmails.exe
+C:\Users\malli\Google Drive\01 GRADIENT-Customers\October-2016-Dayton Rogers\Released\New Demo Tool_Dayton Rogers_V1_09012016\GKL.ApprovalEmails\GKL.ApprovalEmails\obj\Debug\GKL.ApprovalEmails.pdb
+C:\Users\malli\Google Drive\01 GRADIENT-Customers\October-2016-Dayton Rogers\Released\New Demo Tool_Dayton Rogers_V1_09012016\GKL.ApprovalEmails\GKL.ApprovalEmails\bin\Debug\GKL.ApprovalEmails.exe
+C:\Users\malli\Google Drive\01 GRADIENT-Customers\October-2016-Dayton Rogers\Released\New Demo Tool_Dayton Rogers_V1_09012016\GKL.ApprovalEmails\GKL.ApprovalEmails\bin\Debug\GKL.ApprovalEmails.pdb
+C:\Users\malli\Google Drive\01 GRADIENT-Customers\October-2016-Dayton Rogers\Released\New Demo Tool_Dayton Rogers_V1_09012016\GKL.ApprovalEmails\GKL.ApprovalEmails\bin\Debug\Microsoft.SharePoint.Client.dll
+C:\Users\malli\Google Drive\01 GRADIENT-Customers\October-2016-Dayton Rogers\Released\New Demo Tool_Dayton Rogers_V1_09012016\GKL.ApprovalEmails\GKL.ApprovalEmails\bin\Debug\Microsoft.SharePoint.Client.Runtime.dll
+C:\Users\malli\Google Drive\01 GRADIENT-Customers\October-2016-Dayton Rogers\Released\New Demo Tool_Dayton Rogers_V1_09012016\GKL.ApprovalEmails\GKL.ApprovalEmails\obj\Debug\GKL.ApprovalEmails.csprojResolveAssemblyReference.cache
+C:\Users\Purna\Desktop\Latest\GKL.ApprovalEmails\bin\Debug\GKL.ApprovalEmails.exe.config
+C:\Users\Purna\Desktop\Latest\GKL.ApprovalEmails\obj\Debug\GKL.ApprovalEmails.exe
+C:\Users\Purna\Desktop\Latest\GKL.ApprovalEmails\obj\Debug\GKL.ApprovalEmails.pdb
+C:\Users\Purna\Desktop\Latest\GKL.ApprovalEmails\bin\Debug\GKL.ApprovalEmails.exe
+C:\Users\Purna\Desktop\Latest\GKL.ApprovalEmails\bin\Debug\GKL.ApprovalEmails.pdb
+C:\Users\Purna\Desktop\Latest\GKL.ApprovalEmails\bin\Debug\log4net.dll
+C:\Users\Purna\Desktop\Latest\GKL.ApprovalEmails\bin\Debug\Microsoft.SharePoint.Client.dll
+C:\Users\Purna\Desktop\Latest\GKL.ApprovalEmails\bin\Debug\Microsoft.SharePoint.Client.Runtime.dll
+C:\Users\Purna\Desktop\Latest\GKL.ApprovalEmails\obj\Debug\GKL.ApprovalEmails.csprojResolveAssemblyReference.cache
+D:\ALL Projects Requirement\Dayton Rogers_Invoice Cover Sheet\Released tools\Tool 2\GKL.ApprovalEmails\bin\Debug\GKL.ApprovalEmails.exe.config
+D:\ALL Projects Requirement\Dayton Rogers_Invoice Cover Sheet\Released tools\Tool 2\GKL.ApprovalEmails\obj\Debug\GKL.ApprovalEmails.exe
+D:\ALL Projects Requirement\Dayton Rogers_Invoice Cover Sheet\Released tools\Tool 2\GKL.ApprovalEmails\obj\Debug\GKL.ApprovalEmails.pdb
+D:\ALL Projects Requirement\Dayton Rogers_Invoice Cover Sheet\Released tools\Tool 2\GKL.ApprovalEmails\bin\Debug\GKL.ApprovalEmails.exe
+D:\ALL Projects Requirement\Dayton Rogers_Invoice Cover Sheet\Released tools\Tool 2\GKL.ApprovalEmails\bin\Debug\GKL.ApprovalEmails.pdb
+D:\ALL Projects Requirement\Dayton Rogers_Invoice Cover Sheet\Released tools\Tool 2\GKL.ApprovalEmails\bin\Debug\Microsoft.SharePoint.Client.dll
+D:\ALL Projects Requirement\Dayton Rogers_Invoice Cover Sheet\Released tools\Tool 2\GKL.ApprovalEmails\bin\Debug\Microsoft.SharePoint.Client.Runtime.dll
+D:\ALL Projects Requirement\Dayton Rogers_Invoice Cover Sheet\Released tools\Tool 2\GKL.ApprovalEmails\obj\Debug\GKL.ApprovalEmails.csprojResolveAssemblyReference.cache
+D:\GScan Backup_31032017\All Files\ALL Projects Requirement\Dayton Rogers_Invoice Cover Sheet\Office365 Tools\Tool 2\GKL.ApprovalEmails\bin\Debug\GKL.ApprovalEmails.exe.config
+D:\GScan Backup_31032017\All Files\ALL Projects Requirement\Dayton Rogers_Invoice Cover Sheet\Office365 Tools\Tool 2\GKL.ApprovalEmails\obj\Debug\GKL.ApprovalEmails.exe
+D:\GScan Backup_31032017\All Files\ALL Projects Requirement\Dayton Rogers_Invoice Cover Sheet\Office365 Tools\Tool 2\GKL.ApprovalEmails\obj\Debug\GKL.ApprovalEmails.pdb
+D:\GScan Backup_31032017\All Files\ALL Projects Requirement\Dayton Rogers_Invoice Cover Sheet\Office365 Tools\Tool 2\GKL.ApprovalEmails\bin\Debug\GKL.ApprovalEmails.exe
+D:\GScan Backup_31032017\All Files\ALL Projects Requirement\Dayton Rogers_Invoice Cover Sheet\Office365 Tools\Tool 2\GKL.ApprovalEmails\bin\Debug\GKL.ApprovalEmails.pdb
+D:\GScan Backup_31032017\All Files\ALL Projects Requirement\Dayton Rogers_Invoice Cover Sheet\Office365 Tools\Tool 2\GKL.ApprovalEmails\obj\Debug\GKL.ApprovalEmails.csprojResolveAssemblyReference.cache
+D:\GKBLabs Project Present Pending\GKBLabs Office365 DR\Tool 2\GKL.ApprovalEmails\bin\Debug\GKL.ApprovalEmails.exe.config
+D:\GKBLabs Project Present Pending\GKBLabs Office365 DR\Tool 2\GKL.ApprovalEmails\bin\Debug\GKL.ApprovalEmails.exe
+D:\GKBLabs Project Present Pending\GKBLabs Office365 DR\Tool 2\GKL.ApprovalEmails\bin\Debug\GKL.ApprovalEmails.pdb
+D:\GKBLabs Project Present Pending\GKBLabs Office365 DR\Tool 2\GKL.ApprovalEmails\obj\Debug\GKL.ApprovalEmails.csproj.CoreCompileInputs.cache
+D:\GKBLabs Project Present Pending\GKBLabs Office365 DR\Tool 2\GKL.ApprovalEmails\obj\Debug\GKL.ApprovalEmails.exe
+D:\GKBLabs Project Present Pending\GKBLabs Office365 DR\Tool 2\GKL.ApprovalEmails\obj\Debug\GKL.ApprovalEmails.pdb
+D:\GKBLabs Project Present Pending\GKBLabs Office365 DR\Tool 2\GKL.ApprovalEmails\obj\Debug\GKL.ApprovalEmails.csprojResolveAssemblyReference.cache
