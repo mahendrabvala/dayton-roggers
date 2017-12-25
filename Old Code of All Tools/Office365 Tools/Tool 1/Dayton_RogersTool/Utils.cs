@@ -7,7 +7,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.OleDb;
 using log4net;
-
+using System.Net.Mail;
 
 namespace Dayton_RogersTool
 {
@@ -33,11 +33,22 @@ namespace Dayton_RogersTool
                 Invoice._mapVouchers = Convert.ToBoolean(ConfigurationManager.AppSettings.Get("MapVoucher"));
                 Invoice._runforCloud = Convert.ToBoolean(ConfigurationManager.AppSettings.Get("CloudEnvironment"));
 
+                Invoice._fromadrress = ConfigurationManager.AppSettings.Get("FromAddress");
+                Invoice._toadrress = ConfigurationManager.AppSettings.Get("ToAddress");
+                Invoice._subject = ConfigurationManager.AppSettings.Get("Subject");
+                Invoice._smtp = ConfigurationManager.AppSettings.Get("SmtpAddress");
+                Invoice._smtpUserName = ConfigurationManager.AppSettings.Get("SmtpUserName");
+                Invoice._smtpPassword = ConfigurationManager.AppSettings.Get("SmtpPassword");
+                if (ConfigurationManager.AppSettings.Get("SmtpPort") != null)
+                    Invoice._smtpPort = Convert.ToInt32(ConfigurationManager.AppSettings.Get("SmtpPort"));
+                else
+                    Invoice._smtpPort = 587;
+
             }
             catch (Exception ex)
             {
                 Logger.log.Error("Error in Reading Configurations from AppConfig.."+ex.Message);
-                throw ex;
+                //throw ex;
             }
         }
         public static DataTable ReadExcelData(string filePath)
@@ -129,6 +140,47 @@ namespace Dayton_RogersTool
             return dtResult;
         }
 
+        public static void SendEmail(string body, string To)
+        {
+            try
+            {
+                System.Net.Mail.MailMessage MyMailMessage = new System.Net.Mail.MailMessage(Invoice._fromadrress, Invoice._toadrress, Invoice._subject, body);
+
+                MyMailMessage.IsBodyHtml = true;
+
+                System.Net.Mail.SmtpClient mailClient = new System.Net.Mail.SmtpClient(Invoice._smtp, Invoice._smtpPort);
+
+
+                if (!string.IsNullOrEmpty(Invoice._smtpUserName) & !string.IsNullOrEmpty(Invoice._smtpPassword))
+                {
+                    System.Net.NetworkCredential mailAuthentication = new
+                    System.Net.NetworkCredential(Invoice._smtpUserName, Invoice._smtpPassword);
+
+                    mailClient.EnableSsl = true;
+                    mailClient.UseDefaultCredentials = false;
+                    mailClient.Credentials = mailAuthentication;
+                }
+
+                mailClient.Send(MyMailMessage);
+            }
+
+            catch (FormatException formatException)
+            {
+                throw new Exception("You must provide valid e-mail address." + formatException.Message);
+            }
+            catch (InvalidOperationException invalidException)
+            {
+                throw new Exception("Plear Provide a Server Name. Erro: " + invalidException.Message);
+            }
+            catch (SmtpFailedRecipientException failedrecipientException)
+            {
+                throw new Exception("Ther's no mail box for '" + "" + "' . Erro: " + failedrecipientException.Message);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro: " + ex.ToString());
+            }
+        }
     }
 
     public static class Logger
