@@ -22,6 +22,7 @@ namespace Dayton_RogersTool
         public static string _repository;
         public static bool _runforCloud;
 
+        //Email Configration
         public static string _fromadrress;
         public static string _toadrress;
         public static string _subject;

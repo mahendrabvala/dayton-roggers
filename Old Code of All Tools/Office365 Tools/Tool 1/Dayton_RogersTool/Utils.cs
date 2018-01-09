@@ -140,6 +140,7 @@ namespace Dayton_RogersTool
             return dtResult;
         }
 
+        //Send email function
         public static void SendEmail(string body, string To)
         {
             try

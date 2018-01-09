@@ -29,7 +29,7 @@ namespace Dayton_RogersTool
                 Console.WriteLine("Started Processing..");
                 Logger.log.Info("=========== Started Invoice Processing ====================");
                 Utils.ReadConfigurationValues();
-              
+
                 dtInvoices = ConstructDataTable();
                 if (!string.IsNullOrEmpty(Invoice._siteUrl))
                 {
@@ -66,12 +66,16 @@ namespace Dayton_RogersTool
                 List listCoversheet = web.Lists.GetByTitle(Invoice._invoiceSourceLibraryName);
                 List listHeader = web.Lists.GetByTitle(Invoice._invoceDestinationListName);
                 List listDetails = web.Lists.GetByTitle(Invoice._coversheetDetailsListName);//To push
+
                 Logger.log.Info("Reading items from List : " + Invoice._invoiceSourceLibraryName);
                 Logger.log.Info("Reading items from List : " + Invoice._invoiceSourceLibraryName);
+
                 CamlQuery camlQuery = new CamlQuery();
                 camlQuery.ViewXml = "<View><Query><Where><Geq><FieldRef Name='ID'/>" +
                                                     "<Value Type='Number'>0</Value></Geq></Where></Query></View>";
+
                 ListItemCollection collection = listCoversheet.GetItems(camlQuery);
+
                 Logger.log.Info("Reading items from List : " + camlQuery.ViewXml);
                 context.Load(collection, items => items.Include(
                                                          item => item.Id,
@@ -96,99 +100,139 @@ namespace Dayton_RogersTool
                                                          ));
                 context.ExecuteQuery();
                 dtInvoices.Clear();
+
+                //Start Check If Invoice Already Processed Process Developed By Nimesh Sapovadiya Task 3
+                CamlQuery camlQueryDetails = new CamlQuery();
+                camlQueryDetails.ViewXml = "<View><Query><Where><Geq><FieldRef Name='ID'/>" +
+                                                    "<Value Type='Number'>0</Value></Geq></Where></Query></View>";
+
+                ListItemCollection collectionDetails = listDetails.GetItems(camlQueryDetails);
+                context.Load(collectionDetails, items => items.Include(
+                                                         item => item["Title"] //Invoice No#
+                                                         ));
+                context.ExecuteQuery();
+
+                //Invoice Already Processed Details list
+                System.Collections.ArrayList aryDetailsList = new System.Collections.ArrayList();
+
+                foreach (ListItem item in collectionDetails)
+                {
+                    if (item["Title"] != null)
+                    {
+                        //This condition for Remove Dublicate Record (Distinct)
+                        if (!aryDetailsList.Contains(item["Title"].ToString()))
+                        {
+                            aryDetailsList.Add(item["Title"].ToString());
+                        }
+                    }
+                }
+
+                //End Check If Invoice Already Processed Process Developed By Nimesh Sapovadiya
+
                 Logger.log.Info("Filling datatable with the items of List : " + Invoice._invoiceSourceLibraryName);
                 foreach (ListItem item in collection)
                 {
-                    DataRow dr = dtInvoices.NewRow();
-                    dr["ID"] = Convert.ToString(item.Id);
-                    if (item["Vendor_x0020_Name"] != null)
-                        dr["VendorName"] = item["Vendor_x0020_Name"].ToString();
-                    else
-                        dr["VendorName"] = string.Empty;
-
-                    if (item["Vendor"] != null)
-                        dr["Vendor"] = item["Vendor"].ToString();
-                    else
-                        dr["Vendor"] = string.Empty;
-
-                    if (item["PO"] != null)
-                        dr["PO"] = item["PO"].ToString();
-                    else
-                        dr["PO"] = string.Empty;
-
                     if (item["Invoice_x0020__x0023_"] != null)
-                        dr["InvoiceNumber"] = item["Invoice_x0020__x0023_"].ToString();
-                    else
-                        dr["InvoiceNumber"] = string.Empty;
+                    {
+                        //Check If Invoice Already Processed
+                        if (!aryDetailsList.Contains(item["Invoice_x0020__x0023_"].ToString()))
+                        {
+                            DataRow dr = dtInvoices.NewRow();
+                            dr["ID"] = Convert.ToString(item.Id);
+                            if (item["Vendor_x0020_Name"] != null)
+                                dr["VendorName"] = item["Vendor_x0020_Name"].ToString();
+                            else
+                                dr["VendorName"] = string.Empty;
 
-                    if (item["Invoice_x0020_Date"] != null)
-                        dr["InvoiceDate"] = item["Invoice_x0020_Date"].ToString();
-                    else
-                        dr["InvoiceDate"] = string.Empty;
+                            if (item["Vendor"] != null)
+                                dr["Vendor"] = item["Vendor"].ToString();
+                            else
+                                dr["Vendor"] = string.Empty;
 
-                    if (item["Invoice_x0020_Co"] != null)
-                        dr["InvoiceCompany"] = item["Invoice_x0020_Co"].ToString();
-                    else
-                        dr["InvoiceCompany"] = string.Empty;
+                            if (item["PO"] != null)
+                                dr["PO"] = item["PO"].ToString();
+                            else
+                                dr["PO"] = string.Empty;
 
-                    if (item["Invoice_x0020_DIV"] != null)
-                        dr["InvoiceDivision"] = item["Invoice_x0020_DIV"].ToString();
-                    else
-                        dr["InvoiceDivision"] = string.Empty;
+                            if (item["Invoice_x0020__x0023_"] != null)
+                                dr["InvoiceNumber"] = item["Invoice_x0020__x0023_"].ToString();
+                            else
+                                dr["InvoiceNumber"] = string.Empty;
 
-                    if (item["Invoice_x0020_Amt"] != null)
-                        dr["InvoiceAmount"] = item["Invoice_x0020_Amt"].ToString();
-                    else
-                        dr["InvoiceAmount"] = string.Empty;
+                            if (item["Invoice_x0020_Date"] != null)
+                                dr["InvoiceDate"] = item["Invoice_x0020_Date"].ToString();
+                            else
+                                dr["InvoiceDate"] = string.Empty;
 
-                    if (item["Company"] != null)
-                        dr["Company"] = item["Company"].ToString();
-                    else
-                        dr["Company"] = string.Empty;
+                            if (item["Invoice_x0020_Co"] != null)
+                                dr["InvoiceCompany"] = item["Invoice_x0020_Co"].ToString();
+                            else
+                                dr["InvoiceCompany"] = string.Empty;
 
-                    if (item["Division"] != null)
-                        dr["Division"] = item["Division"].ToString();
-                    else
-                        dr["Division"] = string.Empty;
+                            if (item["Invoice_x0020_DIV"] != null)
+                                dr["InvoiceDivision"] = item["Invoice_x0020_DIV"].ToString();
+                            else
+                                dr["InvoiceDivision"] = string.Empty;
 
-                    if (item["Dept_x002d_3_x0020_CH"] != null)
-                        dr["Dept3CH"] = item["Dept_x002d_3_x0020_CH"].ToString();
-                    else
-                        dr["Dept3CH"] = string.Empty;
+                            if (item["Invoice_x0020_Amt"] != null)
+                                dr["InvoiceAmount"] = item["Invoice_x0020_Amt"].ToString();
+                            else
+                                dr["InvoiceAmount"] = string.Empty;
 
-                    if (item["Account_x002d_5_x0020_CH"] != null)
-                        dr["Account5CH"] = item["Account_x002d_5_x0020_CH"].ToString();
-                    else
-                        dr["Account5CH"] = string.Empty;
+                            if (item["Company"] != null)
+                                dr["Company"] = item["Company"].ToString();
+                            else
+                                dr["Company"] = string.Empty;
 
-                    if (item["Expense_x0020_Amt"] != null)
-                        dr["ExpenseAmt"] = item["Expense_x0020_Amt"].ToString();
-                    else
-                        dr["ExpenseAmt"] = string.Empty;
+                            if (item["Division"] != null)
+                                dr["Division"] = item["Division"].ToString();
+                            else
+                                dr["Division"] = string.Empty;
 
-                    if (item["Job"] != null)
-                        dr["Job"] = item["Job"].ToString();
-                    else
-                        dr["Job"] = string.Empty;
+                            if (item["Dept_x002d_3_x0020_CH"] != null)
+                                dr["Dept3CH"] = item["Dept_x002d_3_x0020_CH"].ToString();
+                            else
+                                dr["Dept3CH"] = string.Empty;
 
-                    if (item["CER"] != null)
-                        dr["CER"] = item["CER"].ToString();
-                    else
-                        dr["CER"] = string.Empty;
+                            if (item["Account_x002d_5_x0020_CH"] != null)
+                                dr["Account5CH"] = item["Account_x002d_5_x0020_CH"].ToString();
+                            else
+                                dr["Account5CH"] = string.Empty;
 
-                    // if (item["Monetary_Unit"] != null)
-                    //     dr["MonetaryUnit"] = item["Monetary_Unit"].ToString();
-                    if (item["Acct_x0020_Date"] != null)
-                        dr["AccntDate"] = item["Acct_x0020_Date"].ToString();
-                    else
-                        dr["AccntDate"] = string.Empty;
+                            if (item["Expense_x0020_Amt"] != null)
+                                dr["ExpenseAmt"] = item["Expense_x0020_Amt"].ToString();
+                            else
+                                dr["ExpenseAmt"] = string.Empty;
 
-                    if (item["Account_x0020_String"] != null)
-                        dr["AccountString"] = item["Account_x0020_String"].ToString();
-                    else
-                        dr["AccountString"] = string.Empty;
+                            if (item["Job"] != null)
+                                dr["Job"] = item["Job"].ToString();
+                            else
+                                dr["Job"] = string.Empty;
 
-                    dtInvoices.Rows.Add(dr);
+                            if (item["CER"] != null)
+                                dr["CER"] = item["CER"].ToString();
+                            else
+                                dr["CER"] = string.Empty;
+
+                            // if (item["Monetary_Unit"] != null)
+                            //     dr["MonetaryUnit"] = item["Monetary_Unit"].ToString();
+                            if (item["Acct_x0020_Date"] != null)
+                                dr["AccntDate"] = item["Acct_x0020_Date"].ToString();
+                            else
+                                dr["AccntDate"] = string.Empty;
+
+                            if (item["Account_x0020_String"] != null)
+                                dr["AccountString"] = item["Account_x0020_String"].ToString();
+                            else
+                                dr["AccountString"] = string.Empty;
+
+                            dtInvoices.Rows.Add(dr);
+                        }
+                        else
+                        {
+                            Logger.log.Info("Invoice " + item["Invoice_x0020__x0023_"].ToString() + " already exist in Details List");
+                        }
+                    }
                 }
                 if (dtInvoices != null && dtInvoices.Rows.Count > 0)
                 {
@@ -276,6 +320,7 @@ namespace Dayton_RogersTool
                 #endregion InvoiceSplit
                 if (!string.IsNullOrEmpty(BrokenInvoicesLog))
                 {
+                    //BrokenInvoices Email Body is not Empty then send Email
                     Utils.SendEmail(BrokenInvoicesLog, Invoice._toadrress);
                 }
             }
@@ -408,40 +453,35 @@ namespace Dayton_RogersTool
                     {
                         try
                         {
+
                             if (dr["InvoiceNumber"] != null) //malli added dr["Account5CH"] != DBNull.Value
                             {
                                 Logger.log.Info("Processing Invoice " + dr["InvoiceNumber"].ToString());
-                                bool InvoiceExist = CheckIfInvoiceAlreadyProcessed(listHeader, dr);
-                                if (!InvoiceExist)
-                                {
-                                    ListItemCreationInformation itemCreateInfo = new ListItemCreationInformation();
-                                    ListItem newItem = listHeader.AddItem(itemCreateInfo);
 
-                                    newItem["Title"] = Convert.ToString(dr["InvoiceNumber"]);//vendor invoice number
-                                    newItem["Vendor_x0020_Name"] = Convert.ToString(dr["VendorName"]);
-                                    newItem["Vendor_x0020_Number"] = Convert.ToString(dr["Vendor"]);
-                                    newItem["PO_x0020_Number"] = Convert.ToString(dr["PO"]);
-                                    newItem["Invoice_x0020_Company"] = Convert.ToString(dr["InvoiceCompany"]);
-                                    newItem["Invoice_x0020_Division"] = Convert.ToString(dr["InvoiceDivision"]);
-                                    newItem["Invoice_x0020_Date"] = Convert.ToString(dr["InvoiceDate"]);
-                                    newItem["Invoice_x0020_Amount"] = Convert.ToString(dr["InvoiceAmount"]);
-                                    newItem.Update();
-                                    context.ExecuteQuery();
-                                    Logger.log.Info("Invoice " + Convert.ToString(dr["InvoiceNumber"]) + "Pushed to Header List");
-                                    string sourceItemId = Convert.ToString(newItem.Id);
-                                    PushtoDetailsList(dr, listDetails, sourceItemId);
-                                }
-                                else
-                                {
-                                    Logger.log.Info("Invoice " + Convert.ToString(dr["InvoiceNumber"]) + " already exist in Header List");
-                                }
+                                ListItemCreationInformation itemCreateInfo = new ListItemCreationInformation();
+                                ListItem newItem = listHeader.AddItem(itemCreateInfo);
+
+                                newItem["Title"] = Convert.ToString(dr["InvoiceNumber"]);//vendor invoice number
+                                newItem["Vendor_x0020_Name"] = Convert.ToString(dr["VendorName"]);
+                                newItem["Vendor_x0020_Number"] = Convert.ToString(dr["Vendor"]);
+                                newItem["PO_x0020_Number"] = Convert.ToString(dr["PO"]);
+                                newItem["Invoice_x0020_Company"] = Convert.ToString(dr["InvoiceCompany"]);
+                                newItem["Invoice_x0020_Division"] = Convert.ToString(dr["InvoiceDivision"]);
+                                newItem["Invoice_x0020_Date"] = Convert.ToString(dr["InvoiceDate"]);
+                                newItem["Invoice_x0020_Amount"] = Convert.ToString(dr["InvoiceAmount"]);
+                                newItem.Update();
+                                context.ExecuteQuery();
+                                Logger.log.Info("Invoice " + Convert.ToString(dr["InvoiceNumber"]) + "Pushed to Header List");
+                                string sourceItemId = Convert.ToString(newItem.Id);
+                                PushtoDetailsList(dr, listDetails, sourceItemId);
                             }
                         }
                         catch (Exception)
                         {
+                            //BrokenInvoices Email Body
                             BrokenInvoicesLog = BrokenInvoicesLog + " Error in Processing Invoices ---" + Convert.ToString(dr["InvoiceNumber"]) + "</br>";
                         }
-                        
+
                     }
                 }
             }
@@ -450,15 +490,17 @@ namespace Dayton_RogersTool
             }
 
         }
-        private static bool CheckIfInvoiceAlreadyProcessed(List listHeader, DataRow dr)
+        private static bool CheckIfInvoiceAlreadyProcessed(List listDetails, DataRow dr)
         {
             bool exist = false;
             try
             {
                 CamlQuery camlQuery = new CamlQuery();
+                //Details to check on Details List
+
                 camlQuery.ViewXml = "<View><Query><Where><Eq><FieldRef Name='Title'/>" +
                     "<Value Type='Text'>" + dr["InvoiceNumber"].ToString().Trim() + " </Value></Eq></Where></Query></View>";
-                ListItemCollection collection = listHeader.GetItems(camlQuery);
+                ListItemCollection collection = listDetails.GetItems(camlQuery);
                 context.Load(collection, items => items.Include(
                           item => item.Id, item => item["Title"]
                          ));
@@ -475,9 +517,10 @@ namespace Dayton_RogersTool
             }
             catch (Exception)
             {
+                //BrokenInvoices Email Body
                 BrokenInvoicesLog = BrokenInvoicesLog + " Error in Processing Invoices ---" + Convert.ToString(dr["InvoiceNumber"]) + "</br>";
             }
-            
+
             return exist;
         }
         private static void PushtoDetailsList(DataRow dr, List listDetails, string sourceItemId)
@@ -581,7 +624,8 @@ namespace Dayton_RogersTool
                                         if (JobArray.Length > i)
                                         {
                                             newItem["Job_x0020__x0023_"] = Convert.ToString(JobArray[i]);
-                                        }else
+                                        }
+                                        else
                                         {
                                             newItem["Job_x0020__x0023_"] = string.Empty;
                                         }
@@ -589,7 +633,8 @@ namespace Dayton_RogersTool
                                         if (CERArray.Length > i)
                                         {
                                             newItem["CER_x0020__x0023_"] = Convert.ToString(CERArray[i]);
-                                        }else
+                                        }
+                                        else
                                         {
                                             newItem["CER_x0020__x0023_"] = string.Empty;
                                         }
@@ -597,7 +642,8 @@ namespace Dayton_RogersTool
                                         if (AmountDateArray.Length > i)
                                         {
                                             newItem["Account_x0020_Date"] = Convert.ToString(AmountDateArray[i]);//from excel
-                                        }else
+                                        }
+                                        else
                                         {
                                             newItem["Account_x0020_Date"] = string.Empty;
                                         }
@@ -606,7 +652,8 @@ namespace Dayton_RogersTool
                                         if (accountArray.Length > i)
                                         {
                                             newItem["Account_x0020_String"] = Convert.ToString(accountArray[i]);//dr["AccountString"].ToString();
-                                        }else
+                                        }
+                                        else
                                         {
                                             newItem["Account_x0020_String"] = string.Empty;
                                         }
@@ -650,7 +697,8 @@ namespace Dayton_RogersTool
             }
             catch (Exception)
             {
-                BrokenInvoicesLog = BrokenInvoicesLog + " Error in Processing Invoices ---"+ Convert.ToString(dr["InvoiceNumber"]) +"</br>";
+                //BrokenInvoices Email Body
+                BrokenInvoicesLog = BrokenInvoicesLog + " Error in Processing Invoices ---" + Convert.ToString(dr["InvoiceNumber"]) + "</br>";
             }
 
         }
