@@ -145,6 +145,39 @@ namespace Dayton_RogersTool
         {
             try
             {
+                Logger.log.Info("In Sending Email Method");
+                MailMessage msg = new MailMessage();
+                msg.To.Add(new MailAddress(To));
+                msg.From = new MailAddress(Invoice._fromadrress);
+                msg.Subject = Invoice._subject;
+                msg.Body = body;
+                msg.IsBodyHtml = true;
+                SmtpClient client = new SmtpClient();
+                client.Host = Invoice._smtp;
+                // client.UseDefaultCredentials = true;
+                client.Credentials = new System.Net.NetworkCredential(Invoice._smtpUserName, Invoice._smtpPassword);
+                client.Port = Invoice._smtpPort;
+                // client.EnableSsl = true;
+                if (Invoice._runforCloud)
+                {
+                    //client.Port = 465;
+                    //client.Port = 587;
+                    client.Port = 25;
+                    client.EnableSsl = false;
+                }
+                client.Send(msg);
+                Logger.log.Info("Sent Email to : " + To);
+            }
+            catch (Exception ex)
+            {
+                Logger.log.Error("Error in Sending Email");
+                Console.WriteLine("Error in sending email." + ex.Message);
+            }
+        }
+        public static void SendEmailLocal(string body, string To)
+        {
+            try
+            {
                 System.Net.Mail.MailMessage MyMailMessage = new System.Net.Mail.MailMessage(Invoice._fromadrress, Invoice._toadrress, Invoice._subject, body);
 
                 MyMailMessage.IsBodyHtml = true;
