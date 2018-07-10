@@ -1,8 +1,0 @@
-C:\Users\Purna\Desktop\Latest\Dayton_RogersTool\bin\x86\Debug\Dayton_RogersTool.exe.config
-C:\Users\Purna\Desktop\Latest\Dayton_RogersTool\bin\x86\Debug\Dayton_RogersTool.exe
-C:\Users\Purna\Desktop\Latest\Dayton_RogersTool\bin\x86\Debug\Dayton_RogersTool.pdb
-C:\Users\Purna\Desktop\Latest\Dayton_RogersTool\bin\x86\Debug\Microsoft.SharePoint.Client.dll
-C:\Users\Purna\Desktop\Latest\Dayton_RogersTool\bin\x86\Debug\Microsoft.SharePoint.Client.Runtime.dll
-C:\Users\Purna\Desktop\Latest\Dayton_RogersTool\obj\x86\Debug\Dayton_RogersTool.csprojResolveAssemblyReference.cache
-C:\Users\Purna\Desktop\Latest\Dayton_RogersTool\obj\x86\Debug\Dayton_RogersTool.exe
-C:\Users\Purna\Desktop\Latest\Dayton_RogersTool\obj\x86\Debug\Dayton_RogersTool.pdb
